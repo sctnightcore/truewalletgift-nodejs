@@ -1,0 +1,24 @@
+{
+  "name": "truewalletgift-nodejs",
+  "version": "1.0.0",
+  "description": "<h2>Installing</h2> <pre>npm install express axios</pre> <h2>How to Use</h2> <pre>node pay_api.js</pre> <pre>http://localhost:1234/?key=pieapple&code=โค้ดที่สร้างจากtruewallet&mobile=เบอร์คนรับเงิน</pre>",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "run": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wachirachoomsiri/truewalletgift-nodejs.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wachirachoomsiri/truewalletgift-nodejs/issues"
+  },
+  "homepage": "https://github.com/wachirachoomsiri/truewalletgift-nodejs#readme",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "express": "^4.17.1"
+  }
+}
