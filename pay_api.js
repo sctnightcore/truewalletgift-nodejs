@@ -25,31 +25,7 @@ app.get('/', (req, res) => {
 	}else{
 		var giftcode = req.query.code,
 			phonenumber = req.query.mobile;
-		getpaymentstatus(giftcode,phonenumber)
-		async function getpaymentstatus(code,phonenumber){
-		  await axios({
-			  method: 'get',
-			  url: 'https://gift.truemoney.com/campaign/vouchers/'+ code +'/verify',
-			}).then(function (response) {
-			  getpayment(response.data.data.voucher.link,phonenumber)
-			  console.log(response.data)
-			}).catch(function (error) {
-				console.log(error.response.data)
-				res.status(400).send(error.response.data);
-			});
-		}
-		async function getpayment(code,phonenumber){
-		  await axios({
-			  method: 'get',
-			  url: 'https://gift.truemoney.com/campaign/vouchers/'+code+'/verify?mobile='+ phonenumber,
-			}).then(function (response) {
-			  console.log(response.data)	
-			  redeempayment(code,phonenumber)	  
-			}).catch(function (error) {
-				console.log(error.response.data)
-				res.status(400).send(error.response.data);
-			});
-		}
+		redeempayment(giftcode,phonenumber)
 		async function redeempayment(code,phonenumber){
 			var payloadheaders = payloaddata(code);
 			var payload = {mobile: phonenumber , voucher_hash: code};
